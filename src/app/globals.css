@@ -1,0 +1,27 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.black-contrast-outline {
+  text-shadow: -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white,  
+    -2px 0 0 white,
+    2px 0 0 white,
+    0 2px 0 white,
+    0 -2px 0 white;
+}
+
+.white-contrast-outline {
+  text-shadow: -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black,  
+    -2px 0 0 black,
+    2px 0 0 black,
+    0 2px 0 black,
+    0 -2px 0 black;
+}
