@@ -6,7 +6,7 @@ export type BackgroundImage = {
 }
 
 export type Textarea = {
-  className: string
+  width: string | number
   id: string
   left: number
   top: number

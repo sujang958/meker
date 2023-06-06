@@ -1,7 +1,13 @@
 import MemeDisplay from "@/components/MemeDisplay"
 import MemeItem from "@/components/MemeItem"
+import { MemeTemplate } from "@/data/types"
 
-export default function Home() {
+export default async function Home() {
+  const memeTemplatesReq = await fetch(
+    "http://localhost:3000/api/memeTemplates"
+  )
+  const memeTemplates = (await memeTemplatesReq.json()) as MemeTemplate[]
+
   return (
     <>
       <header className="flex flex-row items-center justify-between py-3 px-8">
@@ -33,26 +39,13 @@ export default function Home() {
       </header>
       <div className="w-full h-screen flex flex-row">
         <section className="flex-none w-96 flex flex-col p-8">
-          <p className="text-xl font-bold">Templates</p>
+          <p className="text-2xl font-bold">Templates</p>
           <div className="grid grid-cols-2 gap-4 py-6">
-            <MemeItem />
-            <MemeItem />
-            <MemeItem />
-            <MemeItem />
-            <MemeItem />
             <MemeItem />
           </div>
         </section>
         <MemeDisplay
-          background={{
-            src: "/memes/disaster_girl.jpg",
-            alt: "",
-            height: 257,
-            width: 388,
-          }}
-          textareas={[
-            { className: "", id: "text1", left: 0, top: 300, text: "LOL" },
-          ]}
+          {...memeTemplates[0]}
         />
       </div>
     </>
