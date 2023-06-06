@@ -1,6 +1,6 @@
 "use client"
 
-import { FC, useState } from "react"
+import React, { FC, useState } from "react"
 import { Anton } from "next/font/google"
 import Image from "next/image"
 import { MemeTemplate } from "@/data/types"
